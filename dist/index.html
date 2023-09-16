@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frogger Game</title>
+    
+  <script type="module" crossorigin src="/assets/index-6b54d086.js"></script>
+  <link rel="stylesheet" href="/assets/index-ecdbef17.css">
+</head>
+
+<body>
+    <main class="flex flex-col items-center justify-center h-screen">
+        <h1 class="font-bold text-3xl">Frogger Game</h1>
+        <h3 class="font-semibold">Time Left : <span id="time-left">60</span></h3>
+        <h3 class="font-semibold mb-5">Result: <span id="result"></span></h3>
+        <div class="grids h-[190px] w-[183px] border-[1px] border-solid border-black flex flex-wrap mb-5 ">
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="ending-block h-5 w-5 bg-red-600"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="log-left l1 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l2 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l3 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l4 h-5 w-5 bg-blue-300 -mb-0.5"></div>
+            <div class="log-left l5 h-5 w-5 bg-blue-300 -mb-0.5"></div>
+            <div class="log-left l1 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l2 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l3 bg-red-950 h-5 w-5 -mb-0.5"></div>
+            <div class="log-left l4 h-5 w-5 bg-blue-300 -mb-0.5"></div>
+            <div class="log-right l5 h-5 w-5 bg-blue-300"></div>
+            <div class="log-right l1 bg-red-950 h-5 w-5"></div>
+            <div class="log-right l2 bg-red-950 h-5 w-5"></div>
+            <div class="log-right l3 bg-red-950 h-5 w-5 "></div>
+            <div class="log-right l4 h-5 w-5 bg-blue-300"></div>
+            <div class="log-right l5 h-5 w-5 bg-blue-300"></div>
+            <div class="log-right l1 bg-red-950 h-5 w-5"></div>
+            <div class="log-right l2 bg-red-950 h-5 w-5"></div>
+            <div class="log-right l3 bg-red-950 h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="cars-left c1 bg-black h-5 w-5  -mb-0.5"></div>
+            <div class="cars-left c2 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-left c3 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-left c1 bg-black h-5 w-5  -mb-0.5"></div>
+            <div class="cars-left c2 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-left c3 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-left c1 bg-black h-5 w-5  -mb-0.5"></div>
+            <div class="cars-left c2 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-left c3 h-5 w-5 bg-gray-300 -mb-0.5"></div>
+            <div class="cars-right c1 bg-black h-5 w-5 "></div>
+            <div class="cars-right c2 h-5 w-5 bg-gray-300"></div>
+            <div class="cars-right c3 h-5 w-5 bg-gray-300"></div>
+            <div class="cars-right c1 bg-black h-5 w-5 "></div>
+            <div class="cars-right c2 h-5 w-5 bg-gray-300"></div>
+            <div class="cars-right c3 h-5 w-5 bg-gray-300"></div>
+            <div class="cars-right c1 bg-black h-5 w-5 "></div>
+            <div class="cars-right c2 h-5 w-5 bg-gray-300"></div>
+            <div class="cars-right c3 h-5 w-5 bg-gray-300"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="starting-block h-5 w-5 bg-blue-700"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+            <div class="h-5 w-5"></div>
+        </div>
+        <button class="bg-blue-500 px-3 py-1 rounded-xl text-white mb-4 hover:bg-blue-700 duration-700"
+            id="start-pause-button">Start/Pause</button>
+    </main>
+    
+</body>
+
+</html>
